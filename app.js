@@ -13,7 +13,9 @@ app.use(bodyParser.urlencoded({
 
 app.use(bodyParser.json());
 
-
+// Create link to Angular build directory
+var distDir = __dirname + "/dist/";
+app.use(express.static(distDir));
 
 //link angular
 
