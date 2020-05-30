@@ -1,0 +1,29 @@
+
+<ul ngbNav #nav="ngbNav" [(activeId)]="active" class="nav-tabs d-flex flex-row justify-content-center">
+  <li [ngbNavItem]="1">
+    <a ngbNavLink>Inicio</a>
+    <ng-template ngbNavContent>
+      <router-outlet></router-outlet>
+    </ng-template>
+  </li>
+  <li [ngbNavItem]="2">
+    <a ngbNavLink>Insertar Preguntas</a>
+    <ng-template ngbNavContent>
+      <p>Prueba2</p>
+      </ng-template>
+  </li>
+  <li [ngbNavItem]="3">
+    <a ngbNavLink>Listar preguntas</a>
+    <ng-template ngbNavContent>
+      <p>Hey</p>
+    </ng-template>
+  </li>
+  <li [ngbNavItem]="4">
+    <a ngbNavLink>Examen</a>
+    <ng-template ngbNavContent>
+      <p>Prueba2</p>
+      </ng-template>
+  </li>
+</ul>
+
+<div [ngbNavOutlet]="nav" class="mt-2"></div>
