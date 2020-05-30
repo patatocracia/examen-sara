@@ -7,7 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor() { }
+public active: number;
+
+  constructor() {
+    this.active = 1;
+  }
 
   ngOnInit(): void {
   }
