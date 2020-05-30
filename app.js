@@ -17,10 +17,6 @@ app.use(bodyParser.json());
 var distDir = __dirname + "/dist/";
 app.use(express.static(distDir));
 
-//link angular
-
-
-
 //cargar rutas
 
 

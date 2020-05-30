@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "prueba-heroku"
+    }
+  },
+  "defaultProject": "prueba-heroku",
+  "cli": {
+    "analytics": false
+  }
 }
