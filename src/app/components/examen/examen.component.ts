@@ -11,7 +11,7 @@ import { PreguntaService } from '../../services/pregunta.service';
 export class ExamenComponent implements OnInit {
 
   public numeroPreguntas: any;
-  public preguntas: any;
+  public preguntas: Array<any>;
   public status: boolean;
 
   constructor(private _preguntaService: PreguntaService) {
@@ -24,20 +24,21 @@ export class ExamenComponent implements OnInit {
   }
 
   generateExam() {
-    for (let i = 0; i <= this.numeroPreguntas; i++) {
+    preguntas.forEach(element => {
       this._preguntaService.getRandomPregunta().subscribe(response => {
-        this.preguntas[i] = response.pregunta;
+        element = response.pregunta;
       },
         error => {
           console.log(<any>error);
 
         }
       );
+    });
 
-    }
+
     this.status = true;
   }
   changeNumber($event) {
-
+    this.numeroPreguntas = $event;
   }
 }
