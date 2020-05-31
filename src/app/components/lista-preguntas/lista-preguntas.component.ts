@@ -11,7 +11,7 @@ import { Router, ActivatedRoute, Params } from '@angular/router';
 })
 export class ListaPreguntasComponent implements OnInit {
 
-  public preguntas: Array<any>;
+  public preguntas: any;
 
   constructor(private _preguntaService: PreguntaService) { }
 
