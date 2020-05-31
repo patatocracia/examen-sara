@@ -17,7 +17,7 @@ export class ExamenComponent implements OnInit {
   constructor(private _preguntaService: PreguntaService) {
     this.numeroPreguntas = 10;
     this.status = false;
-    this.preguntas = new Array(numeroPreguntas);
+    this.preguntas = new Array(this.numeroPreguntas);
   }
 
   ngOnInit(): void {
@@ -43,6 +43,6 @@ export class ExamenComponent implements OnInit {
   }
   changeNumber($event) {
     this.numeroPreguntas = $event;
-    this.preguntas = new Array(numeroPreguntas);
+    this.preguntas = new Array(this.numeroPreguntas);
   }
 }
