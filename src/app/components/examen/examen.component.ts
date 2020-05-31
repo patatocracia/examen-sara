@@ -14,7 +14,7 @@ export class ExamenComponent implements OnInit {
   public preguntas: any;
 
   constructor() {
-
+    
   }
 
   ngOnInit(): void {
@@ -26,6 +26,6 @@ export class ExamenComponent implements OnInit {
   }
 
   generateExam(){
-    
+
   }
 }
