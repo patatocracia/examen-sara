@@ -25,6 +25,8 @@ export class ListaPreguntasComponent implements OnInit {
     this._preguntaService.getAllPreguntas().subscribe(
       response => {
         this.preguntas = JSON.stringify(response.preguntas);
+        console.log(this.preguntas);
+
       },
       error => {
         console.log(<any>error);
