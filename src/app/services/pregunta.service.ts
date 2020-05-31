@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Pregunta } from '../models/pregunta';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
 import { GLOBAL } from './global';
 
 @Injectable()
