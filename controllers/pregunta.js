@@ -20,9 +20,8 @@ pregunta.save((err,preguntaStored)=>{
 });
 }
 function getAllPreguntas(req, res) {
-  var preguntas;
 
-  preguntas.find((err, allPreguntas)=>{
+  Pregunta.find((err, allPreguntas)=>{
     if (err) return res.status(500).send({message: 'error al recuperar las preguntas'});
     if (!allPreguntas) return res.status(404).send({message: 'No se han podido encontrar las preguntas'});
     if (allPreguntas) return res.status(200).send({allPreguntas});
