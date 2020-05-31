@@ -25,7 +25,7 @@ function getAllPreguntas(req, res) {
   preguntas.find((err, allPreguntas)=>{
     if (err) return res.status(500).send({message: 'error al recuperar las preguntas'});
     if (!allPreguntas) return res.status(404).send({message: 'No se han podido encontrar las preguntas'});
-    if (allPreguntas) return res.status(200).send({preguntas: allPreguntas});
+    if (allPreguntas) return res.status(200).send({allPreguntas});
   }).sort('_id');
 }
 
