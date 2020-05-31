@@ -12,26 +12,32 @@ export class ExamenComponent implements OnInit {
 
   public numeroPreguntas: any;
   public preguntas: any;
+  public status: boolean;
 
-  constructor() {
-    this.numeroPreguntas= 10;
+  constructor(private _preguntaService: PreguntaService) {
+    this.numeroPreguntas = 10;
+    this.satus = false;
   }
 
   ngOnInit(): void {
+    this.satus = false;
   }
 
-  onSubmit() {
-    console.log(this.numeroPreguntas);
+  generateExam() {
+    for (let i = 0; i <= this.numeroPreguntas; i++) {
+      this._preguntaService.getRandomPregunta().subscribe(response => {
+        this.preguntas[i] = response.pregunta;
+      },
+        error => {
+          console.log(<any>error);
 
-  }
+        }
+      );
 
-  generateExam(){
-    console.log(this.numeroPreguntas);
+    }
+    this.status = true;
   }
-  changeNumber($event){
-    console.log(this.numeroPreguntas);
-    this.numeroPreguntas = $event;
-    console.log(this.numeroPreguntas);
+  changeNumber($event) {
 
   }
 }

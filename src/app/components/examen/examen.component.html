@@ -6,3 +6,11 @@
 <div class="">
 <button type="button" (click)="generateExam()">Generar examen</button>
 </div>
+
+<div class="" *ngIf="status == true">
+  <div class="jumbotron" *ngFor="let pregunta of preguntas">
+    <h3>{{pregunta.title}}</h3>
+    <p>{{pregunta.text}}</p>
+    <p>La frase es: {{pregunta.response}}</p>
+  </div>
+</div>
