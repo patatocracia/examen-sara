@@ -1,9 +1,9 @@
 <div class="container-fluid">
   <div class="alert alert-success" *ngIf="status == 'Success'">
-    Registro de usuario completado correctamente, <a [routerLink]="['/messages/login']">identificate aqui</a>
+    La pregunta se ha registrado correctamente
   </div>
   <div class="alert alert-danger" *ngIf="status == 'Error'">
-    El registro no se ha podido completar, quiza alguno de los datos ya este en uso.
+    Ha habido un fallo en el registro de la pregunta
   </div>
   <form class="col-md-12" #registerForm="ngForm" (ngSubmit)="onSubmit(registerForm)">
     <div class="form-group">

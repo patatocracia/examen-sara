@@ -21,6 +21,11 @@ createPregunta(pregunta: Pregunta): Observable<any> {
     return this._http.post(this.url + '/register-pregunta', params, { headers: headers });
 }
 
+getAllPreguntas(): Observable<any> {
+  let headers = new HttpHeaders().set('Content-Type', 'application/json');
+
+  return this._http.get(this.url + '/get-preguntas', {headers: headers });
+}
 
 
 }
