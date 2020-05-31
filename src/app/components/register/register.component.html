@@ -1,4 +1,10 @@
 <div class="container-fluid">
+  <div class="alert alert-success" *ngIf="status == 'Success'">
+    Registro de usuario completado correctamente, <a [routerLink]="['/messages/login']">identificate aqui</a>
+  </div>
+  <div class="alert alert-danger" *ngIf="status == 'Error'">
+    El registro no se ha podido completar, quiza alguno de los datos ya este en uso.
+  </div>
   <form class="col-md-12" #registerForm="ngForm" (ngSubmit)="onSubmit(registerForm)">
     <div class="form-group">
       <label>Titulo</label>
