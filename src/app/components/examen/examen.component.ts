@@ -16,11 +16,11 @@ export class ExamenComponent implements OnInit {
 
   constructor(private _preguntaService: PreguntaService) {
     this.numeroPreguntas = 10;
-    this.satus = false;
+    this.status = false;
   }
 
   ngOnInit(): void {
-    this.satus = false;
+    this.status = false;
   }
 
   generateExam() {
