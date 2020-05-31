@@ -21,7 +21,11 @@ export class ExamenComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log(numeroPreguntas);
+    console.log(this.numeroPreguntas);
 
+  }
+
+  generateExam(){
+    
   }
 }
