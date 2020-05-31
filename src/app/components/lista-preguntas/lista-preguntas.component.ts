@@ -12,11 +12,14 @@ import { Router, ActivatedRoute, Params } from '@angular/router';
 export class ListaPreguntasComponent implements OnInit {
 
   public preguntas: any;
+  public mostrar: boolean;
 
-  constructor(private _preguntaService: PreguntaService) { }
+  constructor(private _preguntaService: PreguntaService) {
+    this.mostrar = false;
+   }
 
   ngOnInit(): void {
-    getAllPreguntas();
+    this.getAllPreguntas();
   }
   getAllPreguntas() {
     this._preguntaService.getAllPreguntas().subscribe(
@@ -28,5 +31,13 @@ export class ListaPreguntasComponent implements OnInit {
 
       }
     );
+  }
+
+  changeFalse() {
+    this.mostrar = true;
+  }
+
+  changeTrue() {
+    this.mostrar = false;
   }
 }

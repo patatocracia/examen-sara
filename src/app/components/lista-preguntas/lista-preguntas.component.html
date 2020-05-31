@@ -1,9 +1,13 @@
 <div class="">
-  <button type="button" name="button">Mostrar respuesta</button>
-  <button type="button" name="button">Dejar de mostrar respuesta</button>
+  <button *ngIf="mostrar == false" type="button" name="button" (click)="changeFalse()">Mostrar respuesta</button>
+  <button *ngIf="mostrar == true" type="button" name="button" (click)="changeTrue()">Dejar de mostrar respuesta</button>
 </div>
+<div *ngIf="mostrar == false" class="jumbotron" *ngFor="let pregunta of preguntas">
+  <h3>{{pregunta.title}}</h3>
+  <p>{{pregunta.text}}</p>
 
-<div class="jumbotron" *ngFor="let pregunta of preguntas">
+</div>
+<div *ngIf="mostrar == true" class="jumbotron" *ngFor="let pregunta of preguntas">
   <h3>{{pregunta.title}}</h3>
   <p>{{pregunta.text}}</p>
   <p>La frase es: {{pregunta.response}}</p>
