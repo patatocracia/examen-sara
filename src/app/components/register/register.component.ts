@@ -12,6 +12,7 @@ import { Router, ActivatedRoute, Params } from '@angular/router';
 export class RegisterComponent implements OnInit {
 
 public status: string;
+public pregunta: Pregunta;
 
     constructor(private _preguntaService: PreguntaService) {
       this.pregunta = new Pregunta("", "", "")
