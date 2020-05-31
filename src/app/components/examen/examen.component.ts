@@ -24,7 +24,7 @@ export class ExamenComponent implements OnInit {
   }
 
   generateExam() {
-    preguntas.forEach(element => {
+    this.preguntas.forEach(element => {
       this._preguntaService.getRandomPregunta().subscribe(response => {
         element = response.pregunta;
       },
