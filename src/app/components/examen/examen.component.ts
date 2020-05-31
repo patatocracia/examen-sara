@@ -14,7 +14,7 @@ export class ExamenComponent implements OnInit {
   public preguntas: any;
 
   constructor() {
-    
+    this.numeroPreguntas= 10;
   }
 
   ngOnInit(): void {
@@ -26,6 +26,9 @@ export class ExamenComponent implements OnInit {
   }
 
   generateExam(){
+
+  }
+  changeNumber($event){
 
   }
 }
