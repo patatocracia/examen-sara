@@ -1,0 +1,6 @@
+<div class="">
+  <form class="" #numeroPreguntas="ngForm" (ngSubmit)="onSubmit(numeroPreguntas)">
+    <label>Introduce el numero de preguntas</label>
+    <input type="number" name="quantity" #numeroPreguntas="ngModel" [(ngModel)]="numeroPreguntas" min="1" max="40">
+  </form>
+</div>

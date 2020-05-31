@@ -9,13 +9,15 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { RegisterComponent } from './components/register/register.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ListaPreguntasComponent } from './components/lista-preguntas/lista-preguntas.component';
+import { ExamenComponent } from './components/examen/examen.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     RegisterComponent,
-    ListaPreguntasComponent
+    ListaPreguntasComponent,
+    ExamenComponent
   ],
   imports: [
     BrowserModule,
