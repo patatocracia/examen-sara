@@ -1,18 +1,15 @@
 <div class="">
-    <label>Introduce el numero de preguntas</label>
-    <input type="number" [ngModel]="numeroPreguntas" (ngModelChange)="changeNumber($event)" min="1" max="40">
+  <label>Introduce el numero de preguntas</label>
+  <input type="number" [ngModel]="numeroPreguntas" (ngModelChange)="changeNumber($event)" min="1" max="40">
 </div>
 
 <div class="">
-<button type="button" (click)="generateExam()">Generar examen</button>
+  <button type="button" (click)="generateExam()">Generar examen</button>
 </div>
 
 <div class="" *ngIf="status == true">
   <div class="jumbotron" *ngFor="let pregunta of preguntas">
-    <div class="" *ngFor="let element of pregunta">
-      <h3>{{element.title}}</h3>
-      <p>{{element.text}}</p>
-    </div>
-
+    <h3>{{pregunta.title}}</h3>
+    <p>{{pregunta.text}}</p>
   </div>
 </div>
