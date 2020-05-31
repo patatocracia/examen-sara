@@ -1,14 +1,18 @@
-<div class="">
-  <button *ngIf="mostrar == false" type="button" name="button" (click)="changeFalse()">Mostrar respuesta</button>
-  <button *ngIf="mostrar == true" type="button" name="button" (click)="changeTrue()">Dejar de mostrar respuesta</button>
+<div class="" *ngIf="mostrar == false">
+  <button type="button" name="button" (click)="changeFalse()" class="btn btn-primary">Mostrar respuesta</button>
+  <div class="jumbotron" *ngFor="let pregunta of preguntas">
+    <h3>{{pregunta.title}}</h3>
+    <p>{{pregunta.text}}</p>
+  </div>
 </div>
-<div *ngIf="mostrar == false" class="jumbotron" *ngFor="let pregunta of preguntas">
-  <h3>{{pregunta.title}}</h3>
-  <p>{{pregunta.text}}</p>
 
-</div>
-<div *ngIf="mostrar == true" class="jumbotron" *ngFor="let pregunta of preguntas">
-  <h3>{{pregunta.title}}</h3>
-  <p>{{pregunta.text}}</p>
-  <p>La frase es: {{pregunta.response}}</p>
+
+
+<div class="" *ngIf="mostrar == true">
+  <button  type="button" name="button" (click)="changeTrue()" class="btn btn-primary">Dejar de mostrar respuesta</button>
+  <div *ngIf="mostrar == true" class="jumbotron" *ngFor="let pregunta of preguntas">
+    <h3>{{pregunta.title}}</h3>
+    <p>{{pregunta.text}}</p>
+    <p>La frase es: {{pregunta.response}}</p>
+  </div>
 </div>
