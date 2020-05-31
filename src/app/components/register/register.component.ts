@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Pregunta } from '../../models/pregunta';
 
 @Component({
   selector: 'app-register',
@@ -7,7 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RegisterComponent implements OnInit {
 
-  constructor() { }
+  @Input()
+pregunta: Pregunta;
+@Input()
+createHandler: Function;
+
+    constructor(private _preguntaService: PreguntaService) {
+      this.pregunta = new Pregunta("", "", "")
+    }
+
+    createPregunta(pregunta: Pregunta){
+      this._preguntaService.createPregunta(pregunta).then((newPregunta: Pregunta)=>{
+        this.createHandler(newPregunta)
+      })
+    }
 
   ngOnInit(): void {
   }
