@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Pregunta } from '../../models/pregunta';
+import { PreguntaService } from '../../services/pregunta.service';
 
 @Component({
   selector: 'app-register',
