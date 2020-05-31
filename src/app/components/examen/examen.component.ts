@@ -36,6 +36,7 @@ export class ExamenComponent implements OnInit {
 
     }
 
+    console.log(this.preguntas);
 
     this.status = true;
   }
