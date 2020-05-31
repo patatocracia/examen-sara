@@ -26,9 +26,12 @@ export class ExamenComponent implements OnInit {
   }
 
   generateExam(){
-
+    console.log(this.numeroPreguntas);
   }
   changeNumber($event){
+    console.log(this.numeroPreguntas);
+    this.numeroPreguntas = $event;
+    console.log(this.numeroPreguntas);
 
   }
 }
