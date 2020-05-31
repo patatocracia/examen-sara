@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Pregunta } from '../models/pregunta';
-import { Http, Response } from '@angular/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Observable } from 'rxjs/Observable';
 import { GLOBAL } from './global';
 
 @Injectable()
@@ -9,15 +10,15 @@ export class PreguntaService {
 
 private url: string;
 
-constructor(private _http: Http){
-  this.url = global.url;
+constructor(private _http: HttpClient){
+  this.url = GLOBAL.url;
 }
 
-createPregunta(newPregunta: Pregunta): Promise<void | Pregunta> {
-  return this._http.post(this.url+'/register', newPregunta)
-              .toPromise()
-              .then(response => response.json() as Pregunta)
-              .catch();
+createPregunta(pregunta: Pregunta): Observable<any> {
+  let params = JSON.stringify(pregunta);
+  let headers = new HttpHeaders().set('Content-Type', 'application/json');
+
+    return this._http.post(this.url + '/register', params, { headers: headers });
 }
 
 

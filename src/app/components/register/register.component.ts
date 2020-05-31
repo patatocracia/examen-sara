@@ -1,30 +1,40 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Pregunta } from '../../models/pregunta';
 import { PreguntaService } from '../../services/pregunta.service';
+import { Router, ActivatedRoute, Params } from '@angular/router';
 
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
-  styleUrls: ['./register.component.css']
+  styleUrls: ['./register.component.css'],
+  providers: [PreguntaService]
 })
 export class RegisterComponent implements OnInit {
 
-  @Input()
-pregunta: Pregunta;
-@Input()
-createHandler: Function;
+public status: string;
 
     constructor(private _preguntaService: PreguntaService) {
       this.pregunta = new Pregunta("", "", "")
     }
 
-    createPregunta(pregunta: Pregunta){
-      this._preguntaService.createPregunta(pregunta).then((newPregunta: Pregunta)=>{
-        this.createHandler(newPregunta)
-      })
-    }
 
   ngOnInit(): void {
+  }
+
+  onSubmit(form){
+    this._preguntaService.createPregunta(this.pregunta).subscribe(
+      response => {
+        if(response.pregunta && response.pregunta._id){ //si nos devuelven un usuario y ese usuario tiene una id
+          this.status= 'Success' //todo ha ido bien
+          form.reset();
+        }else{
+          this.status='Error'
+        }
+      },
+      error => {
+        console.log(<any>error);
+      }
+    );
   }
 
 }
