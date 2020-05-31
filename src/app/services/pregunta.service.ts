@@ -18,7 +18,7 @@ createPregunta(pregunta: Pregunta): Observable<any> {
   let params = JSON.stringify(pregunta);
   let headers = new HttpHeaders().set('Content-Type', 'application/json');
 
-    return this._http.post(this.url + '/register', params, { headers: headers });
+    return this._http.post(this.url + '/register-pregunta', params, { headers: headers });
 }
 
 
