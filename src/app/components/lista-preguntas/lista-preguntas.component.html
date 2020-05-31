@@ -10,7 +10,7 @@
 
 <div class="" *ngIf="mostrar == true">
   <button  type="button" name="button" (click)="changeTrue()" class="btn btn-primary">Dejar de mostrar respuesta</button>
-  <div *ngIf="mostrar == true" class="jumbotron" *ngFor="let pregunta of preguntas">
+  <div class="jumbotron" *ngFor="let pregunta of preguntas">
     <h3>{{pregunta.title}}</h3>
     <p>{{pregunta.text}}</p>
     <p>La frase es: {{pregunta.response}}</p>
