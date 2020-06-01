@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PreguntaService } from '../../services/pregunta.service';
-import {NgForm} from '@angular/forms';
+import { NgForm } from '@angular/forms';
 
 
 @Component({
@@ -18,7 +18,6 @@ export class ExamenComponent implements OnInit {
   public interval;
   public subscribeTimer: any;
   public timerStatus: boolean;
-  public correccion: any;
   public iteracion: number;
   public respuesta: boolean;
 
@@ -38,14 +37,14 @@ export class ExamenComponent implements OnInit {
   generateExam() {
     this.preguntas = new Array;
     for (let i = 0; i < this.numeroPreguntas; i++) {
-    this._preguntaService.getRandomPregunta().subscribe(response=>{
+      this._preguntaService.getRandomPregunta().subscribe(response => {
         this.preguntas.push(response.pregunta);
       },
-      error=>{
-        console.log(<any>error);
+        error => {
+          console.log(<any>error);
 
-      }
-    );
+        }
+      );
 
     }
 
@@ -59,39 +58,33 @@ export class ExamenComponent implements OnInit {
     this.timeLeft = this.numeroPreguntas * 40;
   }
 
-  changeRadio($event){
+  changeRadio($event) {
     this.respuesta = $event;
   }
   onSubmit(responseForm: NgForm) {
-      this.respuesta=responseForm.controls['respuesta'].value;
-      this.iteracion = responseForm.controls['iteracion2'].value;
+    this.respuesta = responseForm.controls['respuesta'].value;
+    this.iteracion = responseForm.controls['iteracion2'].value;
 
 
-    console.log('hola');
-    console.log(this.iteracion);
-    console.log(this.respuesta);
-
-
-
-    if (this.preguntas[this.iteracion].response == this.respuesta ) {
-      this.correccion.push(true);
-    }else{
-      this.correccion.push(false);
+    if (this.preguntas[this.iteracion].response == this.respuesta) {
+      var correccion+this.iteracion = true;
+    } else {
+      var correccion+this.iteracion = false;
     }
     console.log(this.correccion[this.iteracion]);
 
   }
   startTimer() {
     this.interval = setInterval(() => {
-      if(this.timeLeft > 0) {
+      if (this.timeLeft > 0) {
         this.timeLeft--;
       } else {
         this.timerStatus = false;
       }
-    },1000)
+    }, 1000)
   }
 
   pauseTimer() {
-      clearInterval(this.interval);
-    }
+    clearInterval(this.interval);
   }
+}
