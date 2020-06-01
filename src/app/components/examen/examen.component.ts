@@ -57,8 +57,10 @@ export class ExamenComponent implements OnInit {
     this.timeLeft = this.numeroPreguntas * 40;
   }
   onSubmit() {
-    if (this.preguntas[this.iteracion].response == ) {
-
+    if (this.preguntas[this.iteracion].response == this.respuesta ) {
+      this.correccion = true;
+    }else{
+      this.correcion = false;
     }
   }
   startTimer() {
