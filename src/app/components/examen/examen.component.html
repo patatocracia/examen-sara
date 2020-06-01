@@ -25,7 +25,7 @@
         True -> <input [ngModel]="respuesta" (ngModelChange)="changeRadio($event)" type="radio" name="respuesta{{i}}" value="true">
       </p>
       <p>
-        False -> <input [ngModel]="respuesta" (ngModelChange)="changeRadio($event)" type="radio" name="respuesta" value="false">
+        False -> <input [ngModel]="respuesta" (ngModelChange)="changeRadio($event)" type="radio" name="respuesta{{i}}" value="false">
       </p>
       <p>
         <input type="submit" value="Corregir">
