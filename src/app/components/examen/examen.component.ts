@@ -60,7 +60,7 @@ export class ExamenComponent implements OnInit {
     if (this.preguntas[this.iteracion].response == this.respuesta ) {
       this.correccion = true;
     }else{
-      this.correcion = false;
+      this.correccion = false;
     }
   }
   startTimer() {
