@@ -52,7 +52,7 @@ export class ExamenComponent implements OnInit {
     this.preguntas = new Array(this.numeroPreguntas);
     this.timeLeft = numeroPreguntas * 40;
   }
-}
+
 
 oberserableTimer() {
     const source = timer(1000, 2000);
@@ -76,3 +76,4 @@ oberserableTimer() {
       clearInterval(this.interval);
     }
   }
+}
