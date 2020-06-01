@@ -27,7 +27,7 @@ export class ExamenComponent implements OnInit {
   generateExam() {
     for (let i = 0; i < this.numeroPreguntas; i++) {
     this._preguntaService.getRandomPregunta().subscribe(response=>{
-        this.preguntas[i]= response.pregunta;
+        this.preguntas.push(response.pregunta);
       },
       error=>{
         console.log(<any>error);
