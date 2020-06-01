@@ -76,4 +76,3 @@ oberserableTimer() {
       clearInterval(this.interval);
     }
   }
-}
