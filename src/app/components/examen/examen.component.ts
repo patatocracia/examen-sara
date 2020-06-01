@@ -56,6 +56,10 @@ export class ExamenComponent implements OnInit {
     this.preguntas = new Array(this.numeroPreguntas);
     this.timeLeft = this.numeroPreguntas * 40;
   }
+
+  changeRadio($event){
+    this.respuesta = $event;
+  }
   onSubmit() {
     if (this.preguntas[this.iteracion].response == this.respuesta ) {
       this.correccion = true;
