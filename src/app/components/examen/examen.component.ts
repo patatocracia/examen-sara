@@ -62,7 +62,8 @@ export class ExamenComponent implements OnInit {
     this.respuesta = $event;
   }
   onSubmit(responseForm: NgForm) {
-      console.log(responseForm.controls['respuesta'].value);
+      this.respuesta=responseForm.controls['respuesta'].value;
+      this.iteracion = responseForm.controls['iteracion'].value;
 
 
     console.log('hola');
