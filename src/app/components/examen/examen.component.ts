@@ -66,8 +66,8 @@ export class ExamenComponent implements OnInit {
 
     console.log(responseForm.iteracion);
 
-    this.iteracion = form.iteracion;
-    this.respuesta = form.respuesta;
+    this.iteracion = responseForm.iteracion;
+    this.respuesta = responseForm.respuesta;
     console.log('hola');
     console.log(this.iteracion);
     console.log(this.respuesta);
