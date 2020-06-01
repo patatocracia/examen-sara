@@ -17,6 +17,9 @@
 </div>
 
 <div class="" *ngIf="status == true">
+  <p>
+    <input type="submit" value="Corregir">
+  </p>
   <div class="jumbotron" *ngFor="let pregunta of preguntas; index as i">
     <h3>{{pregunta.title}}</h3>
     <p>{{pregunta.text}}</p>
@@ -26,9 +29,7 @@
         <option value="false">False</option>
       </select>
       <input type="hidden" name="iteracion2" ngModel #iteracion2="ngModel" value="{{i}}">
-      <p>
-        <input type="submit" value="Corregir">
-      </p>
+
     </form>
     <span *ngIf="correccion[iteracion] == true">Correcto</span>
     <span *ngIf="correccion[iteracion] == false">Incorrecto</span>
