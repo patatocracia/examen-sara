@@ -18,8 +18,8 @@ export class ExamenComponent implements OnInit {
   public interval;
   public subscribeTimer: any;
   public timerStatus: boolean;
-  public iteracion: number;
-  public respuesta: boolean;
+  public iteracion;
+  public respuesta;
   public correccion;
 
   constructor(private _preguntaService: PreguntaService) {
@@ -27,6 +27,8 @@ export class ExamenComponent implements OnInit {
     this.status = false;
     this.timeLeft = this.numeroPreguntas * 40;
     this.correccion = new Array;
+    this.respuesta = new Array;
+    this.iteracion = new Array;
   }
 
   ngOnInit(): void {
@@ -63,16 +65,24 @@ export class ExamenComponent implements OnInit {
     this.respuesta = $event;
   }
   onSubmit(responseForm: NgForm) {
-    this.respuesta = responseForm.controls['respuesta'].value;
-    this.iteracion = responseForm.controls['iteracion2'].value;
+    this.respuesta = push(responseForm.controls['respuesta'].value);
+    this.iteracion = push(responseForm.controls['iteracion2'].value);
 
 
-    if (this.preguntas[this.iteracion].response == this.respuesta) {
-      this.correccion.push(true);
-    } else {
-      this.correccion.push(false);
-    }
+
     console.log(this.correccion[this.iteracion]);
+
+  }
+
+  correccion(){
+    for (let index = 0; index < numeroPreguntas; index++) {
+      if (this.preguntas[i].response == this.respuesta[i]) {
+        this.correccion[i].push(true);
+      } else {
+        this.correccion[i].push(false);
+      }
+
+    }
 
   }
   startTimer() {
