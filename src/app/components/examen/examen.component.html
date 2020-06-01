@@ -9,10 +9,10 @@
 <div class="sticky-top container bg-warning d-flex flex-row justify-content-around">
   <div class="botones">
     <button (click)='startTimer()' class="btn">Start Timer</button>
-<button (click)='pauseTimer()' class="btn">Pause</button>
+    <button (click)='pauseTimer()' class="btn">Pause</button>
   </div>
   <div class="timer">
-    <p>{{timeLeft}} Seconds Left....</p> 
+    <p>{{timeLeft}} Seconds Left....</p>
   </div>
 </div>
 
@@ -20,5 +20,19 @@
   <div class="jumbotron" *ngFor="let pregunta of preguntas; index as i">
     <h3>{{pregunta.title}}</h3>
     <p>{{pregunta.text}}</p>
+    <form class="" #responseForm{{i}}="ngForm" (onSubmit)="onSubmit()">
+      <p>
+        True -> <input #respuesta="ngModel" [(ngModel)]="respuesta" type="radio"value="true">
+      </p>
+      <p>
+        False -> <input #respuesta="ngModel" [(ngModel)]="respuesta" type="radio" value="false">
+      </p>
+      <p>
+        <input type="submit" value="Corregir">
+      </p>
+      <input type="hidden" name="iteracion" #iteracion="ngModel" [(ngModel)]="iteracion" value="{{i}}">
+      <span *ngIf="correccion == true">Correcto</span>
+      <span *ngIf="correccion == false">Incorrecto</span>
+    </form>
   </div>
 </div>
