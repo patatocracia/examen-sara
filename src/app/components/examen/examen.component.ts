@@ -21,6 +21,7 @@ export class ExamenComponent implements OnInit {
   public iteracion;
   public respuesta;
   public correccion;
+  public enviado;
 
   constructor(private _preguntaService: PreguntaService) {
     this.numeroPreguntas = 10;
@@ -29,6 +30,7 @@ export class ExamenComponent implements OnInit {
     this.correccion = new Array;
     this.respuesta = new Array;
     this.iteracion = new Array;
+    this.enviado = new Array;
   }
 
   ngOnInit(): void {
@@ -67,7 +69,7 @@ export class ExamenComponent implements OnInit {
   onSubmit(responseForm: NgForm) {
     this.respuesta.push(responseForm.controls['respuesta'].value);
     this.iteracion.push(responseForm.controls['iteracion2'].value);
-
+    this.enviado.push(true);
 
 
     console.log(this.correccion[this.iteracion]);
@@ -85,6 +87,7 @@ export class ExamenComponent implements OnInit {
 
       }
     );
+    this.numeroPreguntas = this.preguntas.length;
     this.status = true;
   }
 
