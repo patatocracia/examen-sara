@@ -74,7 +74,7 @@ export class ExamenComponent implements OnInit {
 
 
     if (this.preguntas[this.iteracion].response == this.respuesta ) {
-      this.correccion = true;
+      this.correccion[this.iteracion] = true;
     }else{
       this.correccion[this.iteracion] = false;
     }
