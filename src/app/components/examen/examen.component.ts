@@ -17,6 +17,9 @@ export class ExamenComponent implements OnInit {
   public interval;
   public subscribeTimer: any;
   public timerStatus: boolean;
+  public correccion: any;
+  public iteracion: number;
+  public respuesta: boolean;
 
   constructor(private _preguntaService: PreguntaService) {
     this.numeroPreguntas = 10;
@@ -53,7 +56,11 @@ export class ExamenComponent implements OnInit {
     this.preguntas = new Array(this.numeroPreguntas);
     this.timeLeft = this.numeroPreguntas * 40;
   }
+  onSubmit() {
+    if (this.preguntas[this.iteracion].response == ) {
 
+    }
+  }
   startTimer() {
     this.interval = setInterval(() => {
       if(this.timeLeft > 0) {
