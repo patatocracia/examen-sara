@@ -85,8 +85,9 @@ export class ExamenComponent implements OnInit {
 
       }
     );
+    this.status = true;
   }
-  
+
   correccionAll(){
     console.log('hola');
 
