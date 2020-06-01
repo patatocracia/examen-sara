@@ -22,7 +22,7 @@
     <p>{{pregunta.text}}</p>
     <form class="" #responseForm{{i}}="ngForm" (onSubmit)="onSubmit()">
       <p>
-        True -> <input [ngModel]="'respuesta'+i" (ngModelChange)="changeRadio($event)" type="radio" name="'respuesta'+i" value="true">
+        True -> <input [ngModel]="'respuesta{{i}}" (ngModelChange)="changeRadio($event)" type="radio" name="'respuesta'+i" value="true">
       </p>
       <p>
         False -> <input [ngModel]="'respuesta'+i"  (ngModelChange)="changeRadio($event)" type="radio" name="'respuesta'+i}}" value="false">
