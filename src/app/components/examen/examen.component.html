@@ -30,7 +30,7 @@
       <p>
         <input type="submit" value="Corregir">
       </p>
-      <input type="hidden" name="iteracion" #iteracion="ngModel" [(ngModel)]="iteracion" value="{{i}}">
+      <input type="hidden" name="iteracion" [(ngModel)]="iteracion" value="{{i}}">
       <span *ngIf="correccion == true">Correcto</span>
       <span *ngIf="correccion == false">Incorrecto</span>
     </form>
