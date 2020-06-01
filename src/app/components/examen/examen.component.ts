@@ -20,7 +20,7 @@ export class ExamenComponent implements OnInit {
   public timerStatus: boolean;
   public iteracion: number;
   public respuesta: boolean;
-  public correcion;
+  public correccion;
 
   constructor(private _preguntaService: PreguntaService) {
     this.numeroPreguntas = 10;
