@@ -9,7 +9,7 @@
 
 <div class="" *ngIf="status == true">
   <div class="jumbotron" *ngFor="let pregunta of preguntas; index as i">
-    <h3>{{pregunta[i].title}}</h3>
-    <p>{{pregunta[i].text}}</p>
+    <h3>{{pregunta.title}}</h3>
+    <p>{{pregunta.text}}</p>
   </div>
 </div>
