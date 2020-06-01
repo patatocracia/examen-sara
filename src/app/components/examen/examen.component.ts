@@ -53,15 +53,6 @@ export class ExamenComponent implements OnInit {
     this.timeLeft = numeroPreguntas * 40;
   }
 
-
-oberserableTimer() {
-    const source = timer(1000, 2000);
-    const abc = source.subscribe(val => {
-      console.log(val, '-');
-      this.subscribeTimer = this.timeLeft - val;
-    });
-  }
-
   startTimer() {
     this.interval = setInterval(() => {
       if(this.timeLeft > 0) {
