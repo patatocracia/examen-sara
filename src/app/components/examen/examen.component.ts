@@ -62,6 +62,10 @@ export class ExamenComponent implements OnInit {
   }
   onSubmit() {
     console.log('hola');
+    console.log(this.iteracion);
+    console.log(this.respuesta);
+
+
 
     if (this.preguntas[this.iteracion].response == this.respuesta ) {
       this.correccion = true;
