@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PreguntaService } from '../../services/pregunta.service';
+import {NgForm} from '@angular/forms';
 
 
 @Component({
@@ -60,8 +61,10 @@ export class ExamenComponent implements OnInit {
   changeRadio($event){
     this.respuesta = $event;
   }
-  onSubmit(form) {
-    console.log(form.iteracion);
+  onSubmit(responseForm: ngForm) {
+    console.log(responseForm.value);
+
+    console.log(responseForm.iteracion);
 
     this.iteracion = form.iteracion;
     this.respuesta = form.respuesta;

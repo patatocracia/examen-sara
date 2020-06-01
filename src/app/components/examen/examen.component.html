@@ -21,12 +21,12 @@
     <h3>{{pregunta.title}}</h3>
     <p>{{pregunta.text}}</p>
     <form #responseForm="ngForm" (ngSubmit)="onSubmit(responseForm)">
-      <select class="" [ngModel]="respuesta" ngModelChange="changeRadio($event)" [ngModelOptions]="{standalone: true}">
+      <select class="" ngModel name="respuesta" #respuesta="ngModel">
         <option value="true">True</option>
         <option value="false">False</option>
       </select>
 
-      <input type="hidden" name="iteracion" [(ngModel)]="iteracion" value="{{i}}">
+      <input type="hidden" name="iteracion" ngModel #iteracion="ngModel" value="{{i}}">
       <p>
         <input type="submit" value="Corregir">
       </p>
