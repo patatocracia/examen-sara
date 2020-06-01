@@ -6,6 +6,15 @@
 <div class="">
   <button type="button" (click)="generateExam()">Generar examen</button>
 </div>
+<div class="sticky-top container bg-warning d-flex flex-row justify-content-around">
+  <div class="botones">
+    <button (click)='startTimer()' class="btn">Start Timer</button>
+<button (click)='pauseTimer()' class="btn">Pause</button>
+  </div>
+  <div class="timer">
+    <p>{{timeLeft}} Seconds Left....</p> 
+  </div>
+</div>
 
 <div class="" *ngIf="status == true">
   <div class="jumbotron" *ngFor="let pregunta of preguntas; index as i">

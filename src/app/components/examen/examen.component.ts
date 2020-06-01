@@ -13,6 +13,10 @@ export class ExamenComponent implements OnInit {
   public numeroPreguntas: any;
   public preguntas: any;
   public status: boolean;
+  public timeLeft: number;
+  public interval;
+  public subscribeTimer: any;
+  public timerStatus: boolean;
 
   constructor(private _preguntaService: PreguntaService) {
     this.numeroPreguntas = 10;
@@ -46,5 +50,29 @@ export class ExamenComponent implements OnInit {
   changeNumber($event) {
     this.numeroPreguntas = $event;
     this.preguntas = new Array(this.numeroPreguntas);
+    this.timeLeft = numeroPreguntas * 40;
   }
 }
+
+oberserableTimer() {
+    const source = timer(1000, 2000);
+    const abc = source.subscribe(val => {
+      console.log(val, '-');
+      this.subscribeTimer = this.timeLeft - val;
+    });
+  }
+
+  startTimer() {
+    this.interval = setInterval(() => {
+      if(this.timeLeft > 0) {
+        this.timeLeft--;
+      } else {
+        this.timerStatus = false;
+      }
+    },1000)
+  }
+
+  pauseTimer() {
+      clearInterval(this.interval);
+    }
+  }
