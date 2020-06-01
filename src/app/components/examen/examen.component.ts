@@ -78,6 +78,8 @@ export class ExamenComponent implements OnInit {
     }else{
       this.correccion[this.iteracion] = false;
     }
+    console.log(this.correccion[this.iteracion]);
+
   }
   startTimer() {
     this.interval = setInterval(() => {
