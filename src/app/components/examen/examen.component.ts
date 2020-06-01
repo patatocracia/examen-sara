@@ -83,6 +83,9 @@ export class ExamenComponent implements OnInit {
       }
 
     }
+    console.log(this.correccion);
+    console.log(this.respuesta);
+
 
   }
   startTimer() {
