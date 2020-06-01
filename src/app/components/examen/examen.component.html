@@ -31,7 +31,7 @@
         <input type="submit" value="Corregir">
       </p>
     </form>
-    <span *ngIf="correccion+i == true">Correcto</span>
-    <span *ngIf="correccion+i == false">Incorrecto</span>
+    <span *ngIf="correccion[iteracion] == true">Correcto</span>
+    <span *ngIf="correccion[iteracion] == false">Incorrecto</span>
   </div>
 </div>

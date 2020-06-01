@@ -20,6 +20,7 @@ export class ExamenComponent implements OnInit {
   public timerStatus: boolean;
   public iteracion: number;
   public respuesta: boolean;
+  public correcion;
 
   constructor(private _preguntaService: PreguntaService) {
     this.numeroPreguntas = 10;
@@ -67,9 +68,9 @@ export class ExamenComponent implements OnInit {
 
 
     if (this.preguntas[this.iteracion].response == this.respuesta) {
-      var correccion+this.iteracion = true;
+      this.correccion.push(true);
     } else {
-      var correccion+this.iteracion = false;
+      this.correccion.push(false);
     }
     console.log(this.correccion[this.iteracion]);
 
