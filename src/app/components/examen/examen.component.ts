@@ -61,6 +61,8 @@ export class ExamenComponent implements OnInit {
     this.respuesta = $event;
   }
   onSubmit(form) {
+    console.log(form.iteracion);
+
     this.iteracion = form.iteracion;
     this.respuesta = form.respuesta;
     console.log('hola');
