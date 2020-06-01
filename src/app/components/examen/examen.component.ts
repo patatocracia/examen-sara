@@ -60,7 +60,7 @@ export class ExamenComponent implements OnInit {
   changeRadio($event){
     this.respuesta = $event;
   }
-  onSubmit(form: ngForm) {
+  onSubmit(form) {
     this.iteracion = form.iteracion;
     this.respuesta = form.respuesta;
     console.log('hola');
