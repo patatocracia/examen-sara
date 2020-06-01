@@ -73,7 +73,20 @@ export class ExamenComponent implements OnInit {
     console.log(this.correccion[this.iteracion]);
 
   }
+  getAllPreguntas() {
+    this._preguntaService.getAllPreguntas().subscribe(
+      response => {
+        this.preguntas = response.allPreguntas;
+        console.log(this.preguntas);
 
+      },
+      error => {
+        console.log(<any>error);
+
+      }
+    );
+  }
+  
   correccionAll(){
     console.log('hola');
 
