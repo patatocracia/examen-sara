@@ -8,8 +8,8 @@
 </div>
 
 <div class="" *ngIf="status == true">
-  <div class="jumbotron" *ngFor="let pregunta of preguntas">
-    <h3>{{pregunta.title}}</h3>
-    <p>{{pregunta.text}}</p>
+  <div class="jumbotron" *ngFor="let pregunta of preguntas; index as i">
+    <h3>{{pregunta[i].title}}</h3>
+    <p>{{pregunta[i].text}}</p>
   </div>
 </div>

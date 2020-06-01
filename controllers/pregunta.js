@@ -11,7 +11,8 @@ function savePregunta(req, res) {
 
   pregunta.title = params.title;
   pregunta.text = params.text;
-  pregunta.response = toLowerCase(params.response);
+  pregunta.response = params.response;
+  pregunta.response.toLowerCase();
 
   pregunta.save((err, preguntaStored) => {
     if (err) return res.status(500).send({
