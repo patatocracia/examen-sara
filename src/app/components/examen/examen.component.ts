@@ -50,7 +50,7 @@ export class ExamenComponent implements OnInit {
   changeNumber($event) {
     this.numeroPreguntas = $event;
     this.preguntas = new Array(this.numeroPreguntas);
-    this.timeLeft = numeroPreguntas * 40;
+    this.timeLeft = this.numeroPreguntas * 40;
   }
 
   startTimer() {
