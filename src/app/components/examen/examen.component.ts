@@ -21,7 +21,7 @@ export class ExamenComponent implements OnInit {
   constructor(private _preguntaService: PreguntaService) {
     this.numeroPreguntas = 10;
     this.status = false;
-    this.preguntas = new Array;
+
   }
 
   ngOnInit(): void {
@@ -31,6 +31,7 @@ export class ExamenComponent implements OnInit {
   }
 
   generateExam() {
+    this.preguntas = new Array;
     for (let i = 0; i < this.numeroPreguntas; i++) {
     this._preguntaService.getRandomPregunta().subscribe(response=>{
         this.preguntas.push(response.pregunta);
