@@ -17,7 +17,7 @@ export class ExamenComponent implements OnInit {
   constructor(private _preguntaService: PreguntaService) {
     this.numeroPreguntas = 10;
     this.status = false;
-    this.preguntas = new [];
+    this.preguntas = new Array;
   }
 
   ngOnInit(): void {
