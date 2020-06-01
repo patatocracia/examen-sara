@@ -26,12 +26,12 @@
         <option value="false">False</option>
       </select>
       <label>No cambiar uwu</label>
-      <input type="hidden" name="iteracion" ngModel #iteracion="ngModel" ng-value="{{i}}">
+      <input type="text" name="iteracion" ngModel #iteracion="ngModel" placeholder="{{i}}">
       <p>
         <input type="submit" value="Corregir">
       </p>
     </form>
-    <span *ngIf="correccion == true">Correcto</span>
-    <span *ngIf="correccion == false">Incorrecto</span>
+    <span *ngIf="correccion[iteracion] == true">Correcto</span>
+    <span *ngIf="correccion[iteracion] == false">Incorrecto</span>
   </div>
 </div>

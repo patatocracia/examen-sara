@@ -26,6 +26,7 @@ export class ExamenComponent implements OnInit {
     this.numeroPreguntas = 10;
     this.status = false;
     this.timeLeft = this.numeroPreguntas * 40;
+    this.correccion = new Array;
   }
 
   ngOnInit(): void {
@@ -75,7 +76,7 @@ export class ExamenComponent implements OnInit {
     if (this.preguntas[this.iteracion].response == this.respuesta ) {
       this.correccion = true;
     }else{
-      this.correccion = false;
+      this.correccion[this.iteracion] = false;
     }
   }
   startTimer() {
