@@ -75,7 +75,7 @@ export class ExamenComponent implements OnInit {
   }
 
   correccion(){
-    for (let index = 0; index < numeroPreguntas; index++) {
+    for (let index = 0; index < this.numeroPreguntas; index++) {
       if (this.preguntas[index].response == this.respuesta[index]) {
         this.correccion[index].push(true);
       } else {
