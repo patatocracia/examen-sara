@@ -20,17 +20,18 @@
   <div class="jumbotron" *ngFor="let pregunta of preguntas; index as i">
     <h3>{{pregunta.title}}</h3>
     <p>{{pregunta.text}}</p>
-    <form class="" #responseForm="ngForm" (onSubmit)="onSubmit()">
+    <form #responseForm="ngForm" (onSubmit)="onSubmit()">
       <select class="" [ngModel]="respuesta" ngModelChange="changeRadio($event)" [ngModelOptions]="{standalone: true}">
         <option value="true">True</option>
         <option value="false">False</option>
       </select>
+
+      <input type="hidden" name="iteracion" [(ngModel)]="iteracion" value="{{i}}">
       <p>
         <input type="submit" value="Corregir">
       </p>
-      <input type="hidden" name="iteracion" [(ngModel)]="iteracion" value="{{i}}">
-      <span *ngIf="correccion == true">Correcto</span>
-      <span *ngIf="correccion == false">Incorrecto</span>
     </form>
+    <span *ngIf="correccion == true">Correcto</span>
+    <span *ngIf="correccion == false">Incorrecto</span>
   </div>
 </div>
