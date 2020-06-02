@@ -33,7 +33,7 @@
       </select>
       <input type="hidden" name="iteracion2" ngModel #iteracion2="ngModel" value="i">
       <input *ngIf="enviado[i] != true" type="submit" value="Enviar">
-      <input *ngIf="enviado[i] == true" type="submit" value="Enviar">
+      <input *ngIf="enviado[i] == true" type="submit" value="Enviar" disabled>
     </form>
     <span *ngIf="correccion[i] == true">Correcto</span>
     <span *ngIf="correccion[i] == false">Incorrecto</span>
