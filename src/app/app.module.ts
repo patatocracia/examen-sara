@@ -10,6 +10,7 @@ import { RegisterComponent } from './components/register/register.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ListaPreguntasComponent } from './components/lista-preguntas/lista-preguntas.component';
 import { ExamenComponent } from './components/examen/examen.component';
+import { InicioComponent } from './components/inicio/inicio.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { ExamenComponent } from './components/examen/examen.component';
     NavbarComponent,
     RegisterComponent,
     ListaPreguntasComponent,
-    ExamenComponent
+    ExamenComponent,
+    InicioComponent
   ],
   imports: [
     BrowserModule,

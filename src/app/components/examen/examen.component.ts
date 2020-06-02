@@ -63,7 +63,7 @@ export class ExamenComponent implements OnInit {
     this.enviado = new Array(this.numeroPreguntas);
     this.timeLeft = this.numeroPreguntas * 40;
     for (let index = 0; index < this.numeroPreguntas; index++) {
-      this.enviado[index]= false;
+      this.enviado[index] = false;
 
     }
   }
@@ -74,9 +74,9 @@ export class ExamenComponent implements OnInit {
   onSubmit(responseForm: NgForm) {
     this.respuesta.push(responseForm.controls['respuesta'].value);
     this.iteracion.push(responseForm.controls['iteracion2'].value);
-    this.enviado[this.iteracion]= true;
+    this.enviado[this.iteracion] = true;
 
-console.log(this.enviado[this.iteracion]);
+    console.log(this.enviado[this.iteracion]);
 
     console.log(this.correccion[this.iteracion]);
 
@@ -97,7 +97,7 @@ console.log(this.enviado[this.iteracion]);
     this.status = true;
   }
 
-  correccionAll(){
+  correccionAll() {
     console.log('hola');
 
     for (let index = 0; index < this.numeroPreguntas; index++) {
