@@ -60,7 +60,12 @@ export class ExamenComponent implements OnInit {
   changeNumber($event) {
     this.numeroPreguntas = $event;
     this.preguntas = new Array(this.numeroPreguntas);
+    this.enviado = new Array(this.numeroPreguntas);
     this.timeLeft = this.numeroPreguntas * 40;
+    for (let index = 0; index < this.numeroPreguntas; index++) {
+      this.enviado[index]= false;
+
+    }
   }
 
   changeRadio($event) {
@@ -69,7 +74,7 @@ export class ExamenComponent implements OnInit {
   onSubmit(responseForm: NgForm) {
     this.respuesta.push(responseForm.controls['respuesta'].value);
     this.iteracion.push(responseForm.controls['iteracion2'].value);
-    this.enviado.push(true);
+    this.enviado[this.iteracion]= true;
 
 
     console.log(this.correccion[this.iteracion]);
