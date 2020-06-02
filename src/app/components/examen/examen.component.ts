@@ -76,6 +76,7 @@ export class ExamenComponent implements OnInit {
     this.iteracion.push(responseForm.controls['iteracion2'].value);
     this.enviado[this.iteracion]= true;
 
+console.log(this.enviado[this.iteracion]);
 
     console.log(this.correccion[this.iteracion]);
 
