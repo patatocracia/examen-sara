@@ -1,3 +1,3 @@
 export var GLOBAL = {
-  url: '/api'
+  url: '/api/'
 }
